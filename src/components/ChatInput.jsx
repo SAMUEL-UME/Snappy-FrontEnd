@@ -22,6 +22,9 @@ export default function ChatInput({ handleSendMsg }) {
     if (msg.length > 0) {
       handleSendMsg(msg);
       setMsg("");
+      if (showEmojiPicker === true) {
+        setShowEmojiPicker(!showEmojiPicker);
+      }
     }
   };
   return (
@@ -32,7 +35,7 @@ export default function ChatInput({ handleSendMsg }) {
           {showEmojiPicker && <Picker onEmojiClick={handleEmojiClick} />}
         </div>
       </div>
-      <form className="input-container" onSubmit={(e)=>sendChat(e)}>
+      <form className="input-container" onSubmit={(e) => sendChat(e)}>
         <input
           type="text"
           placeholder="type your message..."
@@ -58,7 +61,6 @@ const Container = styled.div`
   @media screen and (min-width: 720px) and (max-width: 1080px) {
     padding: 0 1rem;
     gap: 1rem;
-    
   }
   .button-container {
     display: flex;
@@ -109,7 +111,7 @@ const Container = styled.div`
     background-color: #ffffff34;
     input {
       width: 90%;
-    
+
       background-color: transparent;
       color: #fff;
       border: none;
@@ -132,11 +134,9 @@ const Container = styled.div`
       border: none;
       @media screen and (min-width: 720px) and (max-width: 1080px) {
         padding: 0.3rem 1rem;
-        svg{
-            font-size: 1rem;
-
+        svg {
+          font-size: 1rem;
         }
-
       }
       svg {
         font-size: 2rem;
