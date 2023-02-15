@@ -1,4 +1,4 @@
-export const host ="http://localhost:5000";
+export const host ="https://snappy-backend-h585.onrender.com";
     // "https://beautiful-turtleneck-clam.cyclic.app";
 
 export const registerRoute = `${host}/api/auth/register`;
